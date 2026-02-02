@@ -4,26 +4,23 @@
 
 <div class="min-h-screen">
   <!-- Header -->
-  <header class="border-b border-viz-border bg-viz-bg/80 backdrop-blur-sm sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3">
-        <span class="text-2xl">🎵</span>
-        <span class="text-xl font-bold bg-gradient-to-r from-viz-accent to-pink-500 bg-clip-text text-transparent">
-          pavlovsfrog-music
-        </span>
+  <header class="border-b border-viz-border sticky top-0 z-50 bg-viz-bg">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="text-lg font-medium text-white hover:text-gray-300 transition-colors">
+        pavlovsfrog-music
       </a>
-      <nav class="flex gap-6">
-        <a href="/" class="text-gray-400 hover:text-white transition-colors">Dashboard</a>
-        <a href="/timeline" class="text-gray-400 hover:text-white transition-colors">Timeline</a>
-        <a href="/genres" class="text-gray-400 hover:text-white transition-colors">Genres</a>
-        <a href="/labels" class="text-gray-400 hover:text-white transition-colors">Labels</a>
-        <a href="/browse" class="text-gray-400 hover:text-white transition-colors">Browse</a>
+      <nav class="flex gap-5 text-sm">
+        <a href="/" class="text-gray-500 hover:text-white transition-colors">Dashboard</a>
+        <a href="/timeline" class="text-gray-500 hover:text-white transition-colors">Timeline</a>
+        <a href="/genres" class="text-gray-500 hover:text-white transition-colors">Genres</a>
+        <a href="/labels" class="text-gray-500 hover:text-white transition-colors">Labels</a>
+        <a href="/browse" class="text-gray-500 hover:text-white transition-colors">Browse</a>
       </nav>
     </div>
   </header>
 
   <!-- Main content -->
-  <main class="max-w-7xl mx-auto px-4 py-8">
+  <main class="max-w-6xl mx-auto px-4 py-6">
     <slot />
   </main>
 </div>

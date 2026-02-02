@@ -23,87 +23,47 @@
   <title>Dashboard | pavlovsfrog-music</title>
 </svelte:head>
 
-<div class="space-y-8">
-  <!-- Header -->
+<div class="space-y-6">
   <div>
-    <h1 class="text-3xl font-bold mb-2">Your Music Library</h1>
-    <p class="text-gray-400">Explore your beets collection</p>
+    <h1 class="text-2xl font-medium mb-1">Library</h1>
+    <p class="text-gray-500 text-sm">Your music collection</p>
   </div>
 
-  <!-- Stats Grid -->
   {#if loading}
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
       {#each Array(4) as _}
-        <div class="card animate-pulse h-32"></div>
+        <div class="card h-20 animate-pulse bg-viz-border"></div>
       {/each}
     </div>
   {:else if stats}
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <StatCard 
-        label="Albums" 
-        value={stats.total_albums.toLocaleString()} 
-        icon="💿"
-      />
-      <StatCard 
-        label="Tracks" 
-        value={stats.total_tracks.toLocaleString()} 
-        icon="🎵"
-      />
-      <StatCard 
-        label="Artists" 
-        value={stats.total_artists.toLocaleString()} 
-        icon="🎤"
-      />
-      <StatCard 
-        label="Hours" 
-        value={stats.total_duration_hours.toLocaleString()} 
-        icon="⏱️"
-      />
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <StatCard label="Albums" value={stats.total_albums.toLocaleString()} />
+      <StatCard label="Tracks" value={stats.total_tracks.toLocaleString()} />
+      <StatCard label="Artists" value={stats.total_artists.toLocaleString()} />
+      <StatCard label="Hours" value={stats.total_duration_hours.toLocaleString()} />
     </div>
     
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <StatCard 
-        label="Genres" 
-        value={stats.total_genres.toLocaleString()} 
-        icon="🎸"
-        size="small"
-      />
-      <StatCard 
-        label="Labels" 
-        value={stats.total_labels.toLocaleString()} 
-        icon="🏷️"
-        size="small"
-      />
-      <StatCard 
-        label="Earliest" 
-        value={stats.year_range.min} 
-        icon="📅"
-        size="small"
-      />
-      <StatCard 
-        label="Latest" 
-        value={stats.year_range.max} 
-        icon="✨"
-        size="small"
-      />
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <StatCard label="Genres" value={stats.total_genres.toLocaleString()} size="small" />
+      <StatCard label="Labels" value={stats.total_labels.toLocaleString()} size="small" />
+      <StatCard label="Earliest" value={stats.year_range.min} size="small" />
+      <StatCard label="Latest" value={stats.year_range.max} size="small" />
     </div>
   {/if}
 
-  <!-- Charts Row -->
-  <div class="grid md:grid-cols-2 gap-6">
+  <div class="grid md:grid-cols-2 gap-4">
     <div class="card">
-      <h2 class="text-xl font-semibold mb-4">By Decade</h2>
+      <h2 class="text-sm font-medium text-gray-400 mb-4">By Decade</h2>
       <DecadeChart />
     </div>
     <div class="card">
-      <h2 class="text-xl font-semibold mb-4">Top Artists</h2>
+      <h2 class="text-sm font-medium text-gray-400 mb-4">Top Artists</h2>
       <TopArtists />
     </div>
   </div>
 
-  <!-- Recent Albums -->
   <div class="card">
-    <h2 class="text-xl font-semibold mb-4">Recently Added</h2>
+    <h2 class="text-sm font-medium text-gray-400 mb-4">Recently Added</h2>
     <RecentAlbums />
   </div>
 </div>

@@ -3,43 +3,35 @@
 @tailwind utilities;
 
 :root {
-  --viz-bg: #0a0a0f;
-  --viz-card: #12121a;
-  --viz-border: #1e1e2e;
-  --viz-accent: #8b5cf6;
+  --viz-bg: #111111;
+  --viz-card: #1a1a1a;
+  --viz-border: #2a2a2a;
+  --viz-accent: #888888;
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: linear-gradient(135deg, #0a0a0f 0%, #0f0f1a 100%);
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--viz-bg);
   min-height: 100vh;
 }
 
-/* Custom scrollbar */
+/* Minimal scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--viz-bg);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--viz-border);
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--viz-accent);
+  border-radius: 3px;
 }
 
-/* Smooth transitions */
 .card {
-  @apply bg-viz-card border border-viz-border rounded-xl p-6 transition-all duration-300;
-}
-.card:hover {
-  @apply border-viz-accent/30 shadow-lg shadow-viz-accent/5;
+  @apply bg-viz-card border border-viz-border rounded-lg p-5;
 }
 
-/* Stat number animation */
 .stat-number {
-  @apply text-4xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent;
+  @apply text-3xl font-semibold text-white;
 }

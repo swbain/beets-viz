@@ -20,18 +20,17 @@
   }
 </script>
 
-<div class="space-y-2">
+<div class="space-y-1.5">
   {#each decades as decade}
     <div class="flex items-center gap-3">
-      <div class="w-12 text-sm text-gray-400">{getDecadeLabel(decade.decade)}</div>
-      <div class="flex-1 h-8 bg-viz-border rounded-lg overflow-hidden">
+      <div class="w-12 text-xs text-gray-500">{getDecadeLabel(decade.decade)}</div>
+      <div class="flex-1 h-5 bg-viz-border rounded overflow-hidden">
         <div 
-          class="h-full bg-gradient-to-r from-viz-accent to-pink-500 rounded-lg transition-all duration-500"
+          class="h-full bg-gray-600 rounded"
           style="width: {(decade.count / maxCount) * 100}%"
-        >
-        </div>
+        ></div>
       </div>
-      <div class="w-16 text-right text-sm text-gray-400">{decade.count.toLocaleString()}</div>
+      <div class="w-12 text-right text-xs text-gray-600">{decade.count.toLocaleString()}</div>
     </div>
   {/each}
 </div>
