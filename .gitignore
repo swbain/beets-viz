@@ -1,0 +1,17 @@
+# Environment
+.env
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+backend/venv/
+
+# Node
+node_modules/
+frontend/build/
+frontend/.svelte-kit/
+
+# Logs
+*.log

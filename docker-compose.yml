@@ -1,0 +1,42 @@
+services:
+  backend:
+    build: ./backend
+    container_name: beets-viz-api
+    restart: unless-stopped
+    volumes:
+      - /home/stephen/.beets/config:/beets:ro
+      - /home/stephen/media/music/beets-lib:/music:ro
+    environment:
+      - BEETS_DB=/beets/musiclibrary.blb
+      - MUSIC_PATH=/music
+    networks:
+      - beets-viz
+
+  frontend:
+    build: ./frontend
+    container_name: beets-viz-web
+    restart: unless-stopped
+    ports:
+      - "3333:80"
+    depends_on:
+      - backend
+    networks:
+      - beets-viz
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: beets-viz-tunnel
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    restart: unless-stopped
+    depends_on:
+      - frontend
+    networks:
+      - beets-viz
+    profiles:
+      - tunnel
+
+networks:
+  beets-viz:
+    driver: bridge
