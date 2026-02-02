@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-  <title>Dashboard | beets-viz</title>
+  <title>Dashboard | pavlovsfrog-music</title>
 </svelte:head>
 
 <div class="space-y-8">

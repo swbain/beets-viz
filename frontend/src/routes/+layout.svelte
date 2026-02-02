@@ -9,7 +9,7 @@
       <a href="/" class="flex items-center gap-3">
         <span class="text-2xl">🎵</span>
         <span class="text-xl font-bold bg-gradient-to-r from-viz-accent to-pink-500 bg-clip-text text-transparent">
-          beets-viz
+          pavlovsfrog-music
         </span>
       </a>
       <nav class="flex gap-6">

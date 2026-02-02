@@ -35,7 +35,7 @@
 </script>
 
 <svelte:head>
-  <title>Genres | beets-viz</title>
+  <title>Genres | pavlovsfrog-music</title>
 </svelte:head>
 
 <div class="space-y-6">

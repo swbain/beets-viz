@@ -73,7 +73,7 @@
 </script>
 
 <svelte:head>
-  <title>{artistName} | beets-viz</title>
+  <title>{artistName} | pavlovsfrog-music</title>
 </svelte:head>
 
 <div class="space-y-6">

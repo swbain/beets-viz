@@ -27,7 +27,7 @@
 </script>
 
 <svelte:head>
-  <title>{album ? `${album.album} - ${album.albumartist}` : 'Album'} | beets-viz</title>
+  <title>{album ? `${album.album} - ${album.albumartist}` : 'Album'} | pavlovsfrog-music</title>
 </svelte:head>
 
 {#if loading}

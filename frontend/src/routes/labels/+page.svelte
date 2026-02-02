@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-  <title>Labels | beets-viz</title>
+  <title>Labels | pavlovsfrog-music</title>
 </svelte:head>
 
 <div class="space-y-6">

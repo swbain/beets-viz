@@ -85,7 +85,7 @@
 </script>
 
 <svelte:head>
-  <title>Browse | beets-viz</title>
+  <title>Browse | pavlovsfrog-music</title>
 </svelte:head>
 
 <div class="space-y-6">

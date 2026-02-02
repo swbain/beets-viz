@@ -114,7 +114,7 @@
 </script>
 
 <svelte:head>
-  <title>Timeline | beets-viz</title>
+  <title>Timeline | pavlovsfrog-music</title>
 </svelte:head>
 
 <div class="space-y-6">
