@@ -181,8 +181,11 @@ def get_labels(limit: int = 50):
 def get_artists(limit: int = 50):
     conn = get_db()
     c = conn.cursor()
+    # Exclude compilation/various artist names
     c.execute("""
         SELECT albumartist, COUNT(*) as count FROM albums 
+        WHERE LOWER(albumartist) NOT IN ('various artists', 'various', 'va', 'soundtrack', 'original soundtrack')
+          AND albumartist IS NOT NULL AND albumartist != ''
         GROUP BY albumartist ORDER BY count DESC LIMIT ?
     """, [limit])
     artists = [{"name": row[0], "count": row[1]} for row in c.fetchall()]
