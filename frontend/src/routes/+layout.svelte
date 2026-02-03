@@ -14,6 +14,7 @@
         <a href="/timeline" class="text-gray-500 hover:text-white transition-colors">Timeline</a>
         <a href="/genres" class="text-gray-500 hover:text-white transition-colors">Genres</a>
         <a href="/labels" class="text-gray-500 hover:text-white transition-colors">Labels</a>
+        <a href="/countries" class="text-gray-500 hover:text-white transition-colors">Countries</a>
         <a href="/browse" class="text-gray-500 hover:text-white transition-colors">Browse</a>
       </nav>
     </div>

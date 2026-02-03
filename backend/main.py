@@ -81,6 +81,7 @@ def get_albums(
     label: Optional[str] = None,
     year: Optional[int] = None,
     search: Optional[str] = None,
+    country: Optional[str] = None,
 ):
     conn = get_db()
     c = conn.cursor()
@@ -101,6 +102,9 @@ def get_albums(
     if search:
         where += " AND (albumartist LIKE ? OR album LIKE ?)"
         params.extend([f"%{search}%", f"%{search}%"])
+    if country:
+        where += " AND country = ?"
+        params.append(country)
     
     # Get total count first (same filters, no limit/offset)
     c.execute(f"SELECT COUNT(*) FROM albums {where}", params)

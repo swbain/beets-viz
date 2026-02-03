@@ -13,7 +13,8 @@
   
   $: urlGenre = $page.url.searchParams.get('genre') || '';
   $: urlLabel = $page.url.searchParams.get('label') || '';
-  $: activeFilter = urlGenre || urlLabel || '';
+  $: urlCountry = $page.url.searchParams.get('country') || '';
+  $: activeFilter = urlGenre || urlLabel || urlCountry || '';
   $: totalPages = Math.ceil(total / limit);
   $: currentPage = Math.floor(offset / limit) + 1;
 
@@ -31,6 +32,7 @@
     if (searchQuery) params.set('search', searchQuery);
     if (urlGenre) params.set('genre', urlGenre);
     if (urlLabel) params.set('label', urlLabel);
+    if (urlCountry) params.set('country', urlCountry);
     
     const res = await fetch(`/api/albums?${params}`);
     const data = await res.json();
@@ -60,7 +62,7 @@
   }
 
   onMount(() => loadAlbums(true));
-  $: if (urlGenre || urlLabel) loadAlbums(true);
+  $: if (urlGenre || urlLabel || urlCountry) loadAlbums(true);
 </script>
 
 <svelte:head>
@@ -73,7 +75,7 @@
       <h1 class="text-2xl font-medium mb-1">Browse</h1>
       <p class="text-gray-500 text-sm">
         {#if activeFilter}
-          Filtering: {urlGenre || urlLabel}
+          Filtering: {urlGenre || urlLabel || urlCountry}
           <button on:click={clearFilter} class="text-gray-400 hover:text-white ml-2">clear</button>
         {:else}
           {total.toLocaleString()} albums
